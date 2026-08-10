@@ -1,224 +1,491 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayanth Sai Yarlagadda — Software Engineer</title>
+    <meta name="description" content="Jayanth Sai Yarlagadda — Software Engineer focused on cloud infrastructure, observability, and performance-critical open source. Microsoft SWE intern, contributor to AWS, NVIDIA RAPIDS, and OpenAI open source projects." />
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/9e6e53d832.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <div class ='container'>
-            <nav>
-                <img src="images/logo.png" alt="logo" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="scroll-progress"></div>
+    <div id="bg-tint" aria-hidden="true"></div>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <header id="site-header">
+        <div class="container nav-inner">
+            <a href="#home" class="brand" aria-label="Jayanth Sai Yarlagadda — home">
+                <span class="brand-mark">&lt;JY/&gt;</span>
+            </a>
+
+            <nav id="primary-nav" aria-label="Primary">
+                <span id="nav-pill" aria-hidden="true"></span>
+                <ul id="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#open-source" class="nav-link">Open Source</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#terminal" class="nav-link">Terminal</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Software Developer</p>
-                <h1>Hi, I'm <span>Jay</span></h1>
-            </div>
-        </div>
 
-    </div>
-    <!--------about-------------- -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/background.png">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p class="about-description">Hi, I'm Jayanth Sai Yarlagadda, pursuing my Master's in Software Engineering at San José State University. I'm passionate about crafting software solutions that merge efficiency and innovation. I've deployed scalable web apps on AWS, optimized mobile-edge computing, reducing resource usage by 25%, built responsive e-commerce frontends with React, and engineered secure data portals for healthcare.</p>
-                    <p class="about-description">Fluent in Python, Java, C++, and full-stack web technologies, I thrive at the intersection of robust code and seamless user experiences.</p>
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')">Education</p>
-                            <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Programming Languages</span><br>Python, Java, C, C++, HTML/CSS, JavaScript, SQL</li>
-                                <li><span>Developer Tools</span><br>VS Code, Eclipse, Google Cloud Platform, Android Studio</li>
-                                <li><span>Frameworks & Tools</span><br>React.js, Node.js, AWS (EC2, S3), Jenkins, GitHub, Docker, iFogSim</li>
-                                <li><span>Core Concepts</span><br>Object-Oriented Design, API Development, Unix Systems, Data Modeling, Problem Solving, Agile Development, Data Structures and Algorithms</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>AWS Cloud Virtual Internship</span><br>AICTE, EduSkills, AWS Academy | May 2023 - July 2023<br>• Completed 10-week virtual internship covering cloud fundamentals and core services<br>• Gained hands-on exposure to EC2, S3, IAM, and cloud deployment models<br>• Built 2-tier web application on AWS using EC2, S3, and Route 53<br>• Developed skills in cloud architecture, networking, and identity management</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li>
-                                    <span>San Jose State University</span><br>
-                                    Master of Science in Software Engineering<br>
-                                    Jan. 2025 – Dec. 2026, San Jose, CA<br>
-                                    GPA: 3.5/4.0
-                                </li>
-                                <li>
-                                    <span>SRM Institute of Science and Technology</span><br>
-                                    Bachelor of Technology in Computer Science and Engineering<br>
-                                    (Specialization in Cloud Computing)<br>
-                                    Aug. 2020 – May 2024, Chennai, India<br>
-                                    CGPA: 8.5/10
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="achievements">
-                            <ul>
-                                <li><span>AWS Certified Cloud Practitioner</span><br><a href="https://www.credly.com/badges/9385622c-99f7-4f64-9298-caa7705546f6/linked_in_profile" target="_blank">View Certificate</a></li>
-                                <li><span>3rd Prize, Project Expo 2024</span><br>Project Title: Efficient Task Offloading in Mobile Edge Computing: A Work Sharing Algorithm with Honeycomb Architecture<br>SRM Institute of Science and Technology, Kattankulathur, Chennai</li>
-                            </ul>
-                        </div>
-                </div>
+            <div class="nav-actions">
+                <button id="palette-trigger" class="btn-kbd" aria-label="Open command palette">
+                    <span>Jump to…</span>
+                    <kbd>Ctrl K</kbd>
+                </button>
+                <a href="assets/Jayanth_Resume.pdf" download class="btn btn-ghost btn-small">Résumé</a>
+                <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
-    </div>
-         <!-- ------------------- Services --------------------------->
-     <!-- <div id ="Services">
-        <div class="container">
-            <h1 class="sub-title">Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Design</h2>
-                    <p>whatever</p>
-                    <a href="#">learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-crop-simple"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>whatever</p>
-                    <a href="#">learn more</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <h2>App Design</h2>
-                    <p>whatever</p>
-                    <a href="#">learn more</a>
-                </div>
-            </div>
-        </div>
-     </div> -->
-     <!-- -----------------------------Portfolio------------------------->
-      <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="/images/edge.webp">
-                    <div class="layer">
-                        <h3>Mobile Edge Computing</h3>
-                        <p>Team Lead - AWS, iFogSim, Python<br>Led 3-member group designing simulation framework. Improved resource allocation by 25%.</p>
-                        <a href="https://github.com/JayYarlagadda/Efficient-Task-Offloading-In-Mobile-Edge-Computing" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-               </div>
-               <div class="work">
-                <img src="/images/Grocery.png">
-                <div class="layer">
-                    <h3>Grocery Website</h3>
-                    <p>Frontend Developer – HTML, CSS, JavaScript<br>Built responsive online store with real-time inventory. Boosted session duration by 20%.</p>
-                    <a href="https://github.com/JayYarlagadda/Grocery-Website?tab=readme-ov-file#readme" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-           </div>
-           <div class="work">
-            <img src="/images/Healthapp.webp">
-            <div class="layer">
-                <h3>Healthcare Data Framework</h3>
-                <p>Full-Stack Dev - Java, AWS, MySQL<br>Co-engineered secure healthcare portal with encryption. Reduced latency by 18%.</p>
-                <a href="https://github.com/JayYarlagadda/Secured-Data-Access-and-Search-Framework-for-E-Healthcare-Systems" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-       </div>
-            </div>
-            <a href="https://github.com/JayYarlagadda" target="_blank" class="btn">See more</a>
-        </div>
-      </div>
-      <!-- -----------------------------Contact------------------------------->
-      <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>jayanthyarlagadda@gmail.com</p>
-                    <p><i class="fa-solid fa-square-phone"></i>+1 6692881909</p>
-                    <div class="social-icons">
-                        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/jay-yarlagadda/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <a href="/images/Jayanth_Resume_SE.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
+    </header>
+
+    <main id="main">
+        <!-- ============== HERO ============== -->
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <p class="status-line hero-in" style="animation-delay:0.05s">
+                    <span class="status-dot"></span>status: 200 OK
+                    <span class="status-sep">·</span>San Jose, CA
+                    <span class="status-sep">·</span><span class="status-geo">lat 37.34 · lon -121.89</span>
+                </p>
+
+                <h1 class="hero-name hero-in glitch-wrap" style="animation-delay:0.15s">
+                    <span class="glitch-line" data-text="Jayanth">Jayanth</span><br>
+                    <span class="glitch-line" data-text="Yarlagadda">Yarlagadda</span>
+                </h1>
+                <p class="hero-tag hero-in" style="animation-delay:0.25s">&lt;software_engineer&nbsp;/&gt;</p>
+
+                <p class="hero-lede hero-in" style="animation-delay:0.35s">
+                    I specialize in backend infrastructure — ingestion pipelines, distributed
+                    systems, and the observability layers that keep them reliable in production.
+                    Recent work includes a multi-tenant security telemetry pipeline at <strong>Microsoft</strong>,
+                    alongside open-source contributions: GPU-accelerated tooling for <strong>NVIDIA RAPIDS</strong>
+                    and infrastructure improvements across <strong>AWS</strong> and <strong>OpenAI</strong>.
+                </p>
+
+                <div class="hero-cta hero-in" style="animation-delay:0.45s">
+                    <a href="#experience" class="btn btn-primary">View Experience</a>
+                    <a href="assets/Jayanth_Resume.pdf" download class="btn btn-outline">Download Résumé</a>
+                    <a href="https://github.com/JayYarlagadda" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
                 </div>
             </div>
-        </div>
+
+            <a href="#experience" class="scroll-cue" aria-label="Scroll to experience"><span></span></a>
+        </section>
+
+        <!-- ============== EXPERIENCE ============== -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">01</span>
+                    <h2 class="section-title reveal">Experience</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="exp-card reveal">
+                        <header class="exp-head">
+                            <div>
+                                <h3>Software Engineering Intern</h3>
+                                <p class="exp-org">Microsoft — Security Platform &amp; AI (SP&amp;AI)</p>
+                            </div>
+                            <div class="exp-meta">
+                                <span>Redmond, WA</span>
+                                <span>May 2026 – Aug 2026</span>
+                            </div>
+                        </header>
+                        <ul class="exp-bullets">
+                            <li>Productionized <strong>FluxBridge</strong>, a multi-tenant security data-lake ingestion pipeline on <strong>AKS</strong>, enabling Vector workers to process protobuf-encoded security telemetry into Parquet across 50–80 input streams.</li>
+                            <li>Built an end-to-end <strong>OpenTelemetry</strong> plane reshaping internal metrics and logs into OTLP, tagging every signal with worker, schema, and service metadata for per-stream debugging.</li>
+                            <li>Deployed an in-cluster OpenTelemetry Collector gateway forwarding telemetry to App Insights, Log Analytics, and Azure Grafana — validating 98K+ metric rows/hour across 8 dashboards.</li>
+                            <li>Hardened the AKS deployment for compliance-constrained environments, packaging a C# ingestion worker and a Rust-patched Vector binary into an ACR-hosted image with per-stream autoscaling.</li>
+                            <li>Engineered a C# drain-detection mechanism correlating Prometheus metrics to eliminate indefinite worker hangs; built a Go remediation component driven by throughput and error-growth thresholds.</li>
+                        </ul>
+                        <ul class="tag-list">
+                            <li>C#</li><li>Go</li><li>Rust</li><li>Kubernetes (AKS)</li><li>OpenTelemetry</li><li>Azure Monitor</li><li>Prometheus</li><li>Grafana</li>
+                        </ul>
+                    </article>
+
+                    <article class="exp-card reveal">
+                        <header class="exp-head">
+                            <div>
+                                <h3>Cloud Intern</h3>
+                                <p class="exp-org">AWS Academy Cloud Virtual Internship</p>
+                            </div>
+                            <div class="exp-meta">
+                                <span>Remote</span>
+                                <span>May 2023 – Jul 2023</span>
+                            </div>
+                        </header>
+                        <ul class="exp-bullets">
+                            <li>Architected a secure 2-tier AWS deployment with EC2, S3, VPC, and Route 53 — implementing subnet isolation, route-table segmentation, and security-group controls.</li>
+                            <li>Hardened IAM access and load-tested EC2 configurations, reducing over-permissioned access by ~40%, response time by ~20%, and projected cost by ~15%.</li>
+                        </ul>
+                        <ul class="tag-list">
+                            <li>AWS</li><li>EC2</li><li>S3</li><li>IAM</li><li>VPC</li><li>Route 53</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="hatch-divider" aria-hidden="true"></div>
+
+        <!-- ============== OPEN SOURCE ============== -->
+        <section id="open-source" class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">02</span>
+                    <h2 class="section-title reveal">Open Source Contributions</h2>
+                </div>
+
+                <div class="grid-cards">
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
+                            <span class="oss-org">aws / aws-lambda-runtime-interface-emulator</span>
+                            <span class="oss-badge">PR #185</span>
+                        </div>
+                        <h3>Fix RIE init duration reporting</h3>
+                        <p>RIE stopped measuring init time as soon as the init handler returned. Diagnosed and fixed the timing boundary so cold-start metrics reflect real init duration.</p>
+                        <div class="oss-stats">
+                            <span>Go</span>
+                            <span>AWS Lambda</span>
+                            <span>Cold-start timing</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/aws/aws-lambda-runtime-interface-emulator/pull/185" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
+                            <span class="oss-org">rapidsai / cudf</span>
+                            <span class="oss-badge">PR #23286</span>
+                        </div>
+                        <h3>cudfgrep — GPU-accelerated grep</h3>
+                        <p>Authored a Unix grep-style CLI on top of cuDF's GPU string engine for massively parallel regex search — case-insensitivity, inverted matches, multi-pattern search, and correct grep exit codes.</p>
+                        <div class="oss-stats">
+                            <span>~20 GB/s GPU scan (T4)</span>
+                            <span>~8–9× faster than ripgrep</span>
+                            <span>CUDA / cuDF string kernel</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/rapidsai/cudf/pull/23286" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
+                            <span class="oss-org">openai / harmony</span>
+                            <span class="oss-badge">PR #148</span>
+                        </div>
+                        <h3>Fix quadratic BPE merging for long pieces</h3>
+                        <p>The tokenizer's byte-pair merge degraded to O(mn) on long pieces. Replaced it with a binary heap over linked boundary arrays for large inputs, cutting merge work to O(m log n) while keeping the fast path for short pieces.</p>
+                        <div class="oss-stats">
+                            <span>O(mn) → O(m log n)</span>
+                            <span>Rust</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/openai/harmony/pull/148" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
+                            <span class="oss-org">NVIDIA / garak</span>
+                            <span class="oss-badge">PR #1955</span>
+                        </div>
+                        <h3>Persuasive Adversarial Prompt probe</h3>
+                        <p>Implemented <code>probes.persuasion.PersuasiveJailbreak</code> for NVIDIA's LLM vulnerability scanner, based on the "How Johnny Can Persuade LLMs to Jailbreak Them" research (Zeng et al., arXiv:2401.06373).</p>
+                        <div class="oss-stats">
+                            <span>LLM red-teaming</span>
+                            <span>Python</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/NVIDIA/garak/pull/1955" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
+                            <span class="oss-org">openai / tiktoken &amp; harmony</span>
+                            <span class="oss-badge">PRs</span>
+                        </div>
+                        <h3>Tokenizer error handling &amp; API ergonomics</h3>
+                        <p>Added a dedicated <code>DisallowedSpecialTokenError</code> to tiktoken so callers can catch disallowed special tokens without parsing strings, plus re-exported <code>RenderConversationConfig</code> from harmony's crate root for Rust callers.</p>
+                        <div class="oss-stats">
+                            <span>Python</span>
+                            <span>Rust</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/openai/tiktoken/pull/590" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="hatch-divider" aria-hidden="true"></div>
+
         <!--
-        <div class="copyright">
-            <p>copyright @ jayanthyarlagadda.</p>
-        </div> -->
-      </div>
-    <!-- /* --------------------------about ------------------------*/ -->
-     <script>
-          
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+        ============== GITHUB ACTIVITY (disabled for now — re-enable later) ==============
+        Real GitHub contribution heatmap via ghchart.rshah.org. Commented out per request;
+        uncomment the section below and its matching command-palette entry to bring it back.
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-     </script>
-     <script>
-        var sidemeu = document.getElementById("sidemenu");
-        function openmenu(){
-            sidemeu.style.right = "0";
-        }
-        function closemenu(){
-            sidemeu.style.right = "-200px";
-        }
-        </script>
-        <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwdJiteozh1HzgqsoMSkIbURZAp5P2EEm6nRHk1Mr2PtXv7efNjWC8ZhBU87ZCRG4Yv/exec'
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => 
-                    {msg.innerHTML = "Message sent successfully"
-                    setTimeout(function(){
-                        msg.innerHTML = ""
-                    },5000)
-                    form.reset()
-                    }
-                )
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
+        <section id="github-activity" class="section section-alt">
+            <div class="container">
+                <p class="section-kicker reveal">// 02b — commit_log</p>
+                <h2 class="section-title reveal">Shipping in public</h2>
+                <p class="section-sub reveal">Live contribution graph, pulled directly from GitHub — not a mockup.</p>
+                <div class="heatmap-card reveal">
+                    <img
+                        src="https://ghchart.rshah.org/8b5cf6/JayYarlagadda"
+                        alt="Jayanth Sai Yarlagadda's GitHub contribution graph"
+                        loading="lazy"
+                        width="893"
+                        height="112"
+                    >
+                    <a class="card-link" href="https://github.com/JayYarlagadda" target="_blank" rel="noopener noreferrer">
+                        View full profile <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- ============== PROJECTS ============== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">03</span>
+                    <h2 class="section-title reveal">Independent engineering work</h2>
+                </div>
+
+                <div class="grid-cards">
+                    <article class="proj-card reveal">
+                        <h3>comma.ai Controls Challenge</h3>
+                        <p>A feedforward + PID controller grounded in a system-identified, probed model of the driving simulator — beating the PID baseline (total cost ~52 vs. ~81) with a coordinated feedforward + feedback design.</p>
+                        <ul class="tag-list">
+                            <li>Python</li><li>Controls</li><li>System ID</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/comma-controls-challenge" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <h3>Mobile Edge Computing — Task Offloading</h3>
+                        <p>Led a 3-person team designing an iFogSim simulation framework evaluating task offloading between edge devices and cloud nodes, with an interactive UI for scheduling and monitoring.</p>
+                        <div class="oss-stats compact">
+                            <span>+25% resource allocation</span>
+                            <span>3rd Prize, Project Expo 2024</span>
+                        </div>
+                        <ul class="tag-list">
+                            <li>Python</li><li>iFogSim</li><li>AWS</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/Efficient-Task-Offloading-In-Mobile-Edge-Computing" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <h3>Secure Healthcare Data Access &amp; Search Framework</h3>
+                        <p>Co-engineered a healthcare records portal using searchable encryption, enabling secure querying over encrypted patient data without ever exposing sensitive information. Led front-end design and collaborated on the secure backend architecture on AWS.</p>
+                        <div class="oss-stats compact">
+                            <span>Searchable encryption</span>
+                            <span>~18% lower query latency</span>
+                        </div>
+                        <ul class="tag-list">
+                            <li>Java</li><li>AWS</li><li>MySQL</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/Secured-Data-Access-and-Search-Framework-for-E-Healthcare-Systems" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="hatch-divider" aria-hidden="true"></div>
+
+        <!-- ============== SKILLS ============== -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">04</span>
+                    <h2 class="section-title reveal">Toolbox</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-group reveal">
+                        <h3>Languages</h3>
+                        <ul class="tag-list">
+                            <li>Python</li><li>Java</li><li>C++</li><li>C#</li><li>Go</li><li>Rust</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>HTML/CSS</li><li>Bash</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3>Cloud &amp; Infrastructure</h3>
+                        <ul class="tag-list">
+                            <li>Azure</li><li>AKS</li><li>Kubernetes</li><li>AWS</li><li>EC2</li><li>S3</li><li>IAM</li><li>VPC</li><li>Terraform</li><li>Docker</li><li>Jenkins</li><li>GitHub Actions</li><li>CI/CD</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3>Backend &amp; Observability</h3>
+                        <ul class="tag-list">
+                            <li>OpenTelemetry</li><li>OTLP</li><li>Vector</li><li>Prometheus</li><li>Grafana</li><li>App Insights</li><li>REST APIs</li><li>Spring Boot</li><li>Flask</li><li>Node.js</li><li>Express.js</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3>Data &amp; Systems</h3>
+                        <ul class="tag-list">
+                            <li>NVIDIA cuDF</li><li>CUDA</li><li>Protobuf</li><li>Parquet</li><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Kafka</li><li>pytest</li><li>xUnit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== EDUCATION ============== -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">05</span>
+                    <h2 class="section-title reveal">Academic background</h2>
+                </div>
+
+                <div class="edu-grid">
+                    <article class="edu-card reveal">
+                        <h3>San José State University</h3>
+                        <p class="exp-org">Master of Science in Software Engineering</p>
+                        <p class="edu-meta">Jan 2025 – Dec 2026 · San Jose, CA · GPA 3.6/4.0</p>
+                    </article>
+                    <article class="edu-card reveal">
+                        <h3>SRM Institute of Science and Technology</h3>
+                        <p class="exp-org">B.Tech, Computer Science &amp; Engineering (Cloud Computing)</p>
+                        <p class="edu-meta">Aug 2020 – May 2024 · Chennai, India · CGPA 8.5/10</p>
+                    </article>
+                </div>
+
+                <ul class="cert-list reveal">
+                    <li><a href="https://www.credly.com/badges/9385622c-99f7-4f64-9298-caa7705546f6/linked_in_profile" target="_blank" rel="noopener noreferrer">AWS Certified Cloud Practitioner ↗</a></li>
+                    <li>AWS Academy Cloud Architecting License</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="hatch-divider" aria-hidden="true"></div>
+
+        <!-- ============== TERMINAL ============== -->
+        <section id="terminal" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">06</span>
+                    <h2 class="section-title reveal">Or just ask the terminal</h2>
+                </div>
+                <p class="section-sub reveal">It actually works — type <code>help</code> to see what it can do.</p>
+
+                <div class="term-window reveal">
+                    <div class="term-titlebar">
+                        <span class="term-dot term-dot-red"></span>
+                        <span class="term-dot term-dot-yellow"></span>
+                        <span class="term-dot term-dot-green"></span>
+                        <span class="term-titletext">jayanth@portfolio:~</span>
+                    </div>
+                    <div class="term-body" id="term-body" role="log" aria-live="polite">
+                        <div class="term-line"><span class="term-out">Welcome. Type <strong>help</strong> to see available commands.</span></div>
+                    </div>
+                    <div class="term-input-row">
+                        <span class="term-prompt">jayanth@portfolio:~$</span>
+                        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+                    </div>
+                    <div class="term-quick-cmds">
+                        <button type="button" data-cmd="whoami">whoami</button>
+                        <button type="button" data-cmd="experience">experience</button>
+                        <button type="button" data-cmd="opensource">opensource</button>
+                        <button type="button" data-cmd="projects">projects</button>
+                        <button type="button" data-cmd="skills">skills</button>
+                        <button type="button" data-cmd="contact">contact</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="hatch-divider" aria-hidden="true"></div>
+
+        <!-- ============== CONTACT ============== -->
+        <section id="contact" class="section section-alt">
+            <div class="container contact-inner">
+                <div class="section-head">
+                    <span class="section-index" aria-hidden="true">07</span>
+                    <h2 class="section-title reveal">Let's build something reliable together</h2>
+                </div>
+                <p class="section-sub reveal">Open to Software Engineer opportunities. The fastest way to reach me is email.</p>
+
+                <div class="contact-grid">
+                    <a class="contact-row" href="mailto:jayanthyarlagadda@gmail.com">
+                        <span>Email</span>
+                        <strong>jayanthyarlagadda@gmail.com</strong>
+                    </a>
+                    <a class="contact-row" href="https://www.linkedin.com/in/jay-yarlagadda/" target="_blank" rel="noopener noreferrer">
+                        <span>LinkedIn</span>
+                        <strong>in/jay-yarlagadda</strong>
+                    </a>
+                    <a class="contact-row" href="https://github.com/JayYarlagadda" target="_blank" rel="noopener noreferrer">
+                        <span>GitHub</span>
+                        <strong>@JayYarlagadda</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============== CLOSING WORDMARK ============== -->
+    <div class="wordmark-band" aria-hidden="true">
+        <span class="wordmark-text glitch-line" data-text="JAYANTH.DEV">JAYANTH.DEV</span>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© <span id="year"></span> Jayanth Sai Yarlagadda</span>
+        </div>
+    </footer>
+
+    <!-- ============== COMMAND PALETTE ============== -->
+    <div id="palette-overlay" hidden>
+        <div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+            <div class="palette-input-row">
+                <span aria-hidden="true">/</span>
+                <input id="palette-input" type="text" placeholder="Jump to a section or link…" autocomplete="off">
+                <kbd>Esc</kbd>
+            </div>
+            <ul id="palette-results">
+                <li data-href="#home">Home <span>Section</span></li>
+                <li data-href="#experience">Experience <span>Section</span></li>
+                <li data-href="#open-source">Open Source <span>Section</span></li>
+                <!-- <li data-href="#github-activity">GitHub Activity <span>Section</span></li> re-enable with the GitHub activity section -->
+                <li data-href="#projects">Projects <span>Section</span></li>
+                <li data-href="#skills">Skills <span>Section</span></li>
+                <li data-href="#education">Education <span>Section</span></li>
+                <li data-href="#terminal">Terminal <span>Section</span></li>
+                <li data-href="#contact">Contact <span>Section</span></li>
+                <li data-href="assets/Jayanth_Resume.pdf" data-external="1">Download Résumé <span>File</span></li>
+                <li data-href="https://github.com/JayYarlagadda" data-external="1">GitHub <span>Link</span></li>
+                <li data-href="https://www.linkedin.com/in/jay-yarlagadda/" data-external="1">LinkedIn <span>Link</span></li>
+                <li data-href="mailto:jayanthyarlagadda@gmail.com" data-external="1">Email me <span>Link</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
