@@ -152,6 +152,23 @@
                 <div class="grid-cards">
                     <article class="oss-card reveal">
                         <div class="oss-top">
+                            <span class="oss-org">microsoft / PyRIT</span>
+                            <span class="oss-badge">PR #2884</span>
+                        </div>
+                        <h3>Speed up GCG candidate evaluation</h3>
+                        <p>Profiled the GCG candidate-evaluation path and eliminated full-vocabulary logits per candidate — computing cross-entropy inside each model worker, projecting only needed positions via <code>logits_to_keep</code>, and optionally reusing the prefix KV cache across the batch.</p>
+                        <div class="oss-stats">
+                            <span>~31% faster median step</span>
+                            <span>Python</span>
+                            <span>LLM red-teaming</span>
+                        </div>
+                        <a class="card-link" href="https://github.com/microsoft/PyRIT/pull/2884" target="_blank" rel="noopener noreferrer">
+                            View pull request <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="oss-card reveal">
+                        <div class="oss-top">
                             <span class="oss-org">aws / aws-lambda-runtime-interface-emulator</span>
                             <span class="oss-badge">PR #185</span>
                         </div>
@@ -273,12 +290,61 @@
 
                 <div class="grid-cards">
                     <article class="proj-card reveal">
-                        <h3>comma.ai Controls Challenge</h3>
-                        <p>A feedforward + PID controller grounded in a system-identified, probed model of the driving simulator — beating the PID baseline (total cost ~52 vs. ~81) with a coordinated feedforward + feedback design.</p>
+                        <h3>Orbit — durable edge command delivery</h3>
+                        <p>A durable command-delivery system for intermittently connected edge devices, built around a verification loop: a deterministic C++20 fault engine reproduces failure scenarios against the real Go services, and a history checker verifies the documented guarantees.</p>
+                        <div class="oss-stats compact">
+                            <span>At-least-once + fencing tokens</span>
+                            <span>Deterministic fault replay</span>
+                        </div>
                         <ul class="tag-list">
-                            <li>Python</li><li>Controls</li><li>System ID</li>
+                            <li>Go</li><li>C++</li><li>Distributed Systems</li>
                         </ul>
-                        <a class="card-link" href="https://github.com/JayYarlagadda/comma-controls-challenge" target="_blank" rel="noopener noreferrer">
+                        <a class="card-link" href="https://github.com/JayYarlagadda/orbit" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <h3>Vyomel — AI execution platform</h3>
+                        <p>A personal AI execution platform that turns natural-language intent into verified, permission-aware actions across browser, desktop, and API tools — with a focus on guardrails and verification rather than blind automation.</p>
+                        <div class="oss-stats compact">
+                            <span>Permission-aware actions</span>
+                            <span>Browser · desktop · API tools</span>
+                        </div>
+                        <ul class="tag-list">
+                            <li>Python</li><li>LLM Agents</li><li>Automation</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/vyomel" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <h3>Computer-Use Automation</h3>
+                        <p>An LLM discovers a legacy back-office UI flow once, then compiles it into a typed, versioned capability artifact that replays deterministically — with no model left in the decision loop at runtime.</p>
+                        <div class="oss-stats compact">
+                            <span>Record-once, replay deterministically</span>
+                            <span>No model in the runtime loop</span>
+                        </div>
+                        <ul class="tag-list">
+                            <li>TypeScript</li><li>LLM Agents</li><li>Automation</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/computer-use-automation" target="_blank" rel="noopener noreferrer">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <h3>Production-Ready Cloud Infrastructure</h3>
+                        <p>A production-ready cloud deployment pipeline pairing a FastAPI service with Terraform-provisioned AWS infrastructure, containerized with Docker and shipped through a GitHub Actions CI/CD workflow.</p>
+                        <div class="oss-stats compact">
+                            <span>Terraform-provisioned AWS</span>
+                            <span>Dockerized CI/CD</span>
+                        </div>
+                        <ul class="tag-list">
+                            <li>Python</li><li>Terraform</li><li>Docker</li><li>AWS</li><li>GitHub Actions</li>
+                        </ul>
+                        <a class="card-link" href="https://github.com/JayYarlagadda/production-ready-cloud-infrastructure-deployment" target="_blank" rel="noopener noreferrer">
                             View repository <span aria-hidden="true">↗</span>
                         </a>
                     </article>
